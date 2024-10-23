@@ -1,0 +1,11 @@
+todoSlice.js - named because to get to know everyone that we are using redux toolkit
+
+redux and react-redux both are different
+
+redux is a core library
+react-redux is the implimentation of it to wire the redux and react
+
+never mutate your state
+
+start always to make store - single source of truth
+
