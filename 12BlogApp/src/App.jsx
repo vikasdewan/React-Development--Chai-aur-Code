@@ -1,11 +1,10 @@
  
 import { useState, useEffect,} from 'react'
-import {useDispatch} from 'react-redux';
+import {Provider, useDispatch} from 'react-redux';
 import authService from './appwrite/auth';
 import './App.css'
-import authService from './appwrite/auth';
 import {login, logout} from './store/authSlice';
-
+import { Header,Footer } from './components';
 
 
 function App() {
@@ -29,7 +28,18 @@ function App() {
  
   
   return !loading ? (
-    <div> </div>
+   <>
+   <div className='min-h-screen flex flex-wrap content-between bg-black text-yellow-300 font-serif cent'>
+    <div className='w-full block'>
+      <Header/>
+      <main>
+        TODO: {/* <Outlet/> */}
+      </main>
+      <Footer/>
+    </div>
+   </div>
+   </>
+
   ) : (null)
 }
 
