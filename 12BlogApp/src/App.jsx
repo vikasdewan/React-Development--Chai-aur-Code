@@ -17,19 +17,20 @@ function App() {
     authService.getCurrentUser()
     .then((userData)=>{
       if(userData){
-        dispatch()
+        dispatch(login({userData}))
+      }
+      else{
+        dispatch(logout());
       }
     })
     .catch((err)=>console.log(err))
-    .finally(()=>{})
+    .finally(()=> setLoading(false))
   },[])
-  return (
-    <>
-    <div>
-      <h1>A Blog App with AppWrite | VikasDewan</h1>
-    </div>
-    </>
-  )
+ 
+  
+  return !loading ? (
+    <div> </div>
+  ) : (null)
 }
 
 export default App
